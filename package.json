@@ -5,7 +5,10 @@
   "version": "0.1.0",
   "author": "Seonwoong Hwang <hsw0905@gmail.com>",
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "gatsby": "^5.10.0",
+    "gatsby-plugin-emotion": "^8.10.0",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-sharp": "^5.10.0",
     "gatsby-plugin-typescript": "^5.10.0",
