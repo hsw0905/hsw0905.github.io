@@ -22,11 +22,19 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function (
       data: {
         allMarkdownRemark: {edges},
       },
-      location: { href },
+      location: {href},
     }) {
   const {
-    node: { html, frontmatter },
-  } = edges[0]
+    node: {
+      html,
+      frontmatter: {
+        title,
+        summary,
+        date,
+        categories,
+      },
+    },
+  } = edges[0];
 
   return (
       <Template title={title} description={summary} url={href}>
@@ -35,8 +43,8 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function (
             date={date}
             categories={categories}
         />
-        <PostContent html={html} />
-        <CommentWidget />
+        <PostContent html={html}/>
+        <CommentWidget/>
       </Template>
   )
 }
