@@ -9,9 +9,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `dev blog`,
-    description: `dev log in developer life moment`,
-    author: `harry`,
+    title: `Harry의 기술 블로그`,
+    description: `개발하며 생긴 이야기를 기록하는 기술 블로그입니다.`,
+    author: `Harry`,
     siteUrl: `https://hsw0905.github.io`,
   },
   plugins: [
@@ -79,6 +79,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -88,6 +89,13 @@ module.exports = {
           placeholder: 'blurred',
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://hsw0905.github.io',
+        stripQueryString: true,
+      },
     },
   ],
 }
