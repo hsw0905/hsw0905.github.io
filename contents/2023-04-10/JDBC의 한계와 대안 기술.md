@@ -1,5 +1,5 @@
 ---
-date: '2021-05-16'
+date: '2023-04-10'
 title: 'JDBC의 등장과 한계'
 categories: ['JDBC']
 summary: 'JDBC 이야기'
