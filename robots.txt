@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hsw0905.github.io/sitemap-index.xml
+Host: https://hsw0905.github.io
