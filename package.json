@@ -56,6 +56,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d dist"
+    "deploy": "gatsby build && gh-pages -d public -b main -r 'git@github.com:hsw0905/hsw0905.github.io.git'"
   }
 }
