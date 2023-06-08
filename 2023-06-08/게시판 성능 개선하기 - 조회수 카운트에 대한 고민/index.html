@@ -58,27 +58,27 @@
 <hr>
 <h3>[해결 방법]</h3>
 <ol>
-<li>Lock</li>
+<li><strong>Lock</strong></li>
 </ol>
 <ul>
 <li>쿼리에 락을 걸어 데이터 정합성을 맞출 수 있습니다. 하지만 이 방법은 조회 쿼리에 락을 걸게 되면 트랜잭션이 끝날 때까지 기다려야 하기 때문에, 성능이 나빠질 우려가 있었습니다.</li>
 </ul>
 <ol start="2">
-<li>Native Query</li>
+<li><strong>Native Query</strong></li>
 </ol>
 <ul>
 <li>네이티브 쿼리를 이용해 board_sorts 테이블 자체의 카운트 값을 +1 시키는 방법입니다. 읽은 값을 바로 업데이트 하기 때문에 동시성 문제를 해결할 수 있습니다.</li>
 <li>하지만 조회수 관련 값은 빈번하게 변하는 값으로, 매번 업데이트를 하게 되면 서버에 무리가 갈 수 있다고 판단하였습니다.</li>
 </ul>
 <ol start="3">
-<li>Sync Schedule</li>
+<li><strong>Sync Schedule</strong></li>
 </ol>
 <ul>
 <li>@Scheduled를 이용하여 정합성을 맞추는 방법입니다. 즉, 특정 주기마다 조회수 관련 값을 맞춰 데이터 정합성을 지키게 합니다.</li>
 <li>이 방법은 업데이트 주기가 오기 전까지는 조회수 값이 맞지 않을 수 있습니다. 또한 여러 서버에서 스케쥴이 병렬적으로 발생하게 된다면 리소스가 낭비될 수 있습니다.</li>
 </ul>
 <ol start="4">
-<li>event + queue + @Scheduled</li>
+<li><strong>Event + Queue + @Scheduled</strong></li>
 </ol>
 <ul>
 <li>조회수에 변경이 일어나면 이벤트를 발생시켜 Queue에 넣게 됩니다. 그리고 Queue에 있는 이벤트를 @Scheduled를 이용해 처리하는 방법입니다.</li>
