@@ -100,8 +100,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://hsw0905.github.io',
+        sitemap: 'https://hsw0905.github.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`
     },
   ],
 }
